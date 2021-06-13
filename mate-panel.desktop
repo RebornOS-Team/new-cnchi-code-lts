@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Setting up Plymouth
+Exec=mate-panel --reset --layout default && yadsu rm -f /etc/xdg/autostart/mate-panel.desktop
+Name[en_US]=mate-panel

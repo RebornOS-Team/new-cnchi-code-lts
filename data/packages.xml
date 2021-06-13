@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cnchi>
+    <editions>
+        <edition name="common" description="Packages common to all DE and base">
+            <packages>
+                <pkgname>rebornos-cosmic-common</pkgname>
+                <pkgname>rebornos-cosmic-full-lts-base</pkgname>
+                <pkgname>base</pkgname>
+                <pkgname>base-devel</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="graphic" description="Common to all graphic desktops">
+            <packages>
+                <pkgname lib="gtk">dconf-editor</pkgname>
+                <!-- <pkgname>xorg-apps</pkgname> -->
+                <!-- <pkgname>xorg-fonts</pkgname> -->
+                <pkgname lang="ja">noto-fonts-cjk</pkgname>                
+                <pkgname lang="ja_JP">noto-fonts-cjk</pkgname>
+                <pkgname lang="ko">noto-fonts-cjk</pkgname>
+                <pkgname lang="ko_KR">noto-fonts-cjk</pkgname>
+                <pkgname lang="zh">noto-fonts-cjk</pkgname>
+                <pkgname lang="zh_CN">noto-fonts-cjk</pkgname>
+                <pkgname lang="zh_HK">noto-fonts-cjk</pkgname>
+                <pkgname lang="zh_SG">noto-fonts-cjk</pkgname>
+                <pkgname lang="zh_TW">noto-fonts-cjk</pkgname>
+                <pkgname lang="ko_KR">noto-fonts-cjk</pkgname>
+                <pkgname>rebornos-cosmic-graphic</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="base" description="Without X">
+            <packages>
+                <pkgname>rebornos-cosmic-full-base</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Gnome" description="Gnome Desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-gnome</pkgname>
+                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+                <!-- <pkgname>gnome</pkgname> -->
+            </packages>
+        </edition>
+
+        <edition name="Apricity" description="Apricity Desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-gnome</pkgname>
+                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
+                <pkgname>apricity-theme</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Cinnamon" description="Cinnamon desktop">
+            <packages>
+                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
+                <pkgname>rebornos-cosmic-cinnamon</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Pantheon" description="Pantheon desktop">
+            <packages>
+                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
+                <pkgname>rebornos-cosmic-pantheon</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Windows" description="Windows Interface">
+            <packages>
+                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
+                <pkgname>rebornos-cosmic-cinnamon</pkgname>
+                <pkgname>cinnamon</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+                <pkgname>windows-theme</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="XFCE" description="XFCE Desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-xfce</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Mate" description="MATE Desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-mate</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="openbox" description="Openbox Window Manager">
+            <packages>
+                <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname>
+                <pkgname>rebornos-cosmic-openbox</pkgname>
+                <pkgname>lxde-gtk3</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="KDE" description="KDE Desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-kde</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <!-- EXPERIMENTAL EDITIONS -->
+
+        <edition name="lxqt" description="LXQT Desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-lxqt</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Enlightenment" description="Enlightenment Desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-enlightenment</pkgname>
+                <pkgname>enlightenment</pkgname>
+                <!-- <pkgname nm='true' name='connman'>connman</pkgname> -->
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Budgie" description="Solus desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-budgie</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="i3" description="Tiling window manager">
+            <packages>
+                <pkgname>rebornos-cosmic-i3</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Deepin" description="Deepin Desktop">
+           <packages>
+               <pkgname>rebornos-cosmic-deepin</pkgname>
+               <!-- <pkgname nm='true' name='NetworkManager'>network-manager-applet</pkgname> -->
+               <!-- <pkgname>reborn-deepin-schemas</pkgname> -->
+               <!-- <pkgname>deepin-file-manager-root</pkgname> -->
+               <!-- <pkgname>flatplat-blue-theme</pkgname> -->
+               <pkgname dm='true' name='lightdm'>lightdm</pkgname>
+           </packages>
+       </edition>
+    </editions>
+
+    <!-- User desired features -->
+    <features>
+        <feature name="a11y">
+            <pkgname>alsa-utils</pkgname>
+            <pkgname>bluez</pkgname>
+            <pkgname>bluez-libs</pkgname>
+            <!-- <pkgname>brltty-minimal</pkgname> -->
+            <pkgname>clonezilla</pkgname>
+            <pkgname>darkhttpd</pkgname>
+            <pkgname>ddrescue</pkgname>
+            <pkgname>dhclient</pkgname>
+            <pkgname>dnsmasq</pkgname>
+            <pkgname>elinks</pkgname>
+            <pkgname>espeak</pkgname>
+            <pkgname>espeakup</pkgname>
+            <pkgname>ethtool</pkgname>
+            <pkgname>gnu-netcat</pkgname>
+            <pkgname>gpm</pkgname>
+            <pkgname>irssi</pkgname>
+            <pkgname>lftp</pkgname>
+            <pkgname>mc</pkgname>
+            <pkgname>orca</pkgname>
+            <!-- <pkgname>python2-speechd</pkgname> -->
+            <pkgname>vim</pkgname>
+        </feature>
+        <feature name="aur">
+            <pkgname>yay</pkgname>
+            <pkgname>cmake</pkgname>
+            <pkgname>git</pkgname>
+            <pkgname>breezy</pkgname>
+        </feature>
+        <feature name="bluetooth">
+            <pkgname>bluez</pkgname>
+            <pkgname>bluez-utils</pkgname>
+            <pkgname>pulseaudio-bluetooth</pkgname>
+            <pkgname desktops='cinnamon,mate,openbox'>blueberry</pkgname>
+            <pkgname desktops='kde,lxqt'>bluedevil</pkgname>
+            <pkgname desktops='gnome'>gnome-bluetooth</pkgname>
+        </feature>
+        <feature name="broadcom">
+            <pkgname>broadcom-wl</pkgname>
+        </feature>
+        <feature name="cups">
+            <pkgname>rebornos-cosmic-cups</pkgname>
+            <pkgname lib='qt'>print-manager</pkgname>
+            <pkgname lib='gtk'>system-config-printer</pkgname>
+            <!-- <pkgname lib='gtk'>python2-gnomekeyring</pkgname> -->
+            <!-- These two are required by hp-setup -->
+        </feature>
+        <feature name="chromium">
+            <pkgname>chromium</pkgname>
+            <pkgname>chromium-widevine</pkgname>
+        </feature>
+        <feature name="dropbox">
+            <pkgname>dropbox</pkgname>
+        </feature>
+        <feature name="firefox">
+            <pkgname>firefox</pkgname>
+              <pkgname lang="sq">firefox-i18n-sq</pkgname>
+              <pkgname lang="ar">firefox-i18n-ar</pkgname>
+              <pkgname lang="ast">firefox-i18n-ast</pkgname>
+              <pkgname lang="eu">firefox-i18n-eu</pkgname>
+              <pkgname lang="be">firefox-i18n-be</pkgname>
+              <pkgname lang="bn">firefox-i18n-bn</pkgname>
+              <pkgname lang="bs">firefox-i18n-bs</pkgname>
+              <pkgname lang="bg">firefox-i18n-bg</pkgname>
+              <pkgname lang="ca">firefox-i18n-ca</pkgname>
+              <pkgname lang="zh_CN">firefox-i18n-zh-cn</pkgname>
+              <pkgname lang="zh_TW">firefox-i18n-zh-tw</pkgname>
+              <pkgname lang="hr">firefox-i18n-hr</pkgname>
+              <pkgname lang="cs">firefox-i18n-cs</pkgname>
+              <pkgname lang="da">firefox-i18n-da</pkgname>
+              <pkgname lang="nl">firefox-i18n-nl</pkgname>
+              <pkgname lang="eo">firefox-i18n-eo</pkgname>
+              <pkgname lang="et">firefox-i18n-et</pkgname>
+              <pkgname lang="fi">firefox-i18n-fi</pkgname>
+              <pkgname lang="fr">firefox-i18n-fr</pkgname>
+              <pkgname lang="gl">firefox-i18n-gl</pkgname>
+              <pkgname lang="ka">firefox-i18n-ka</pkgname>
+              <pkgname lang="de">firefox-i18n-de</pkgname>
+              <pkgname lang="el">firefox-i18n-el</pkgname>
+              <pkgname lang="he">firefox-i18n-he</pkgname>
+              <pkgname lang="hi">firefox-i18n-hi-in</pkgname>
+              <pkgname lang="hu">firefox-i18n-hu</pkgname>
+              <pkgname lang="id">firefox-i18n-id</pkgname>
+              <pkgname lang="it">firefox-i18n-it</pkgname>
+              <pkgname lang="ja">firefox-i18n-ja</pkgname>
+              <pkgname lang="kk">firefox-i18n-kk</pkgname>
+              <pkgname lang="km">firefox-i18n-km</pkgname>
+              <pkgname lang="ko">firefox-i18n-ko</pkgname>
+              <pkgname lang="lv">firefox-i18n-lv</pkgname>
+              <pkgname lang="lt">firefox-i18n-lt</pkgname>
+              <pkgname lang="mk">firefox-i18n-mk</pkgname>
+              <pkgname lang="mr">firefox-i18n-mr</pkgname>
+              <pkgname lang="ne">firefox-i18n-ne-np</pkgname>
+              <pkgname lang="nb_NO">firefox-i18n-nb-no</pkgname>
+              <pkgname lang="nn_NO">firefox-i18n-nn-no</pkgname>
+              <pkgname lang="pl">firefox-i18n-pl</pkgname>
+              <pkgname lang="pt">firefox-i18n-pt-pt</pkgname>
+              <pkgname lang="pt_BR">firefox-i18n-pt-br</pkgname>
+              <pkgname lang="pa">firefox-i18n-pa-in</pkgname>
+              <pkgname lang="ro">firefox-i18n-ro</pkgname>
+              <pkgname lang="ru">firefox-i18n-ru</pkgname>
+              <pkgname lang="sr">firefox-i18n-sr</pkgname>
+              <pkgname lang="sk">firefox-i18n-sk</pkgname>
+              <pkgname lang="sl">firefox-i18n-sl</pkgname>
+              <pkgname lang="es">firefox-i18n-es-es</pkgname>
+              <pkgname lang="sv">firefox-i18n-sv-se</pkgname>
+              <pkgname lang="ta">firefox-i18n-ta</pkgname>
+              <pkgname lang="th">firefox-i18n-th</pkgname>
+              <pkgname lang="tr">firefox-i18n-tr</pkgname>
+              <pkgname lang="uk">firefox-i18n-uk</pkgname>
+              <pkgname lang="vi">firefox-i18n-vi</pkgname>
+              <pkgname lang="cy">firefox-i18n-cy</pkgname>
+        </feature>
+        <feature name="firefox-developer-edition">
+            <pkgname>firefox-developer-edition</pkgname>
+              <pkgname lang="sq">firefox-developer-edition-i18n-sq</pkgname>
+              <pkgname lang="ar">firefox-developer-edition-i18n-ar</pkgname>
+              <pkgname lang="ast">firefox-developer-edition-i18n-ast</pkgname>
+              <pkgname lang="eu">firefox-developer-edition-i18n-eu</pkgname>
+              <pkgname lang="be">firefox-developer-edition-i18n-be</pkgname>
+              <pkgname lang="bn">firefox-developer-edition-i18n-bn</pkgname>
+              <pkgname lang="bs">firefox-developer-edition-i18n-bs</pkgname>
+              <pkgname lang="bg">firefox-developer-edition-i18n-bg</pkgname>
+              <pkgname lang="ca">firefox-developer-edition-i18n-ca</pkgname>
+              <pkgname lang="zh_CN">firefox-developer-edition-i18n-zh-cn</pkgname>
+              <pkgname lang="zh_TW">firefox-developer-edition-i18n-zh-tw</pkgname>
+              <pkgname lang="hr">firefox-developer-edition-i18n-hr</pkgname>
+              <pkgname lang="cs">firefox-developer-edition-i18n-cs</pkgname>
+              <pkgname lang="da">firefox-developer-edition-i18n-da</pkgname>
+              <pkgname lang="nl">firefox-developer-edition-i18n-nl</pkgname>
+              <pkgname lang="eo">firefox-developer-edition-i18n-eo</pkgname>
+              <pkgname lang="et">firefox-developer-edition-i18n-et</pkgname>
+              <pkgname lang="fi">firefox-developer-edition-i18n-fi</pkgname>
+              <pkgname lang="fr">firefox-developer-edition-i18n-fr</pkgname>
+              <pkgname lang="gl">firefox-developer-edition-i18n-gl</pkgname>
+              <pkgname lang="ka">firefox-developer-edition-i18n-ka</pkgname>
+              <pkgname lang="de">firefox-developer-edition-i18n-de</pkgname>
+              <pkgname lang="el">firefox-developer-edition-i18n-el</pkgname>
+              <pkgname lang="he">firefox-developer-edition-i18n-he</pkgname>
+              <pkgname lang="hi">firefox-developer-edition-i18n-hi-in</pkgname>
+              <pkgname lang="hu">firefox-developer-edition-i18n-hu</pkgname>
+              <pkgname lang="id">firefox-developer-edition-i18n-id</pkgname>
+              <pkgname lang="it">firefox-developer-edition-i18n-it</pkgname>
+              <pkgname lang="ja">firefox-developer-edition-i18n-ja</pkgname>
+              <pkgname lang="kk">firefox-developer-edition-i18n-kk</pkgname>
+              <pkgname lang="km">firefox-developer-edition-i18n-km</pkgname>
+              <pkgname lang="ko">firefox-developer-edition-i18n-ko</pkgname>
+              <pkgname lang="lv">firefox-developer-edition-i18n-lv</pkgname>
+              <pkgname lang="lt">firefox-developer-edition-i18n-lt</pkgname>
+              <pkgname lang="mk">firefox-developer-edition-i18n-mk</pkgname>
+              <pkgname lang="mr">firefox-developer-edition-i18n-mr</pkgname>
+              <pkgname lang="ne">firefox-developer-edition-i18n-ne-np</pkgname>
+              <pkgname lang="nb_NO">firefox-developer-edition-i18n-nb-no</pkgname>
+              <pkgname lang="nn_NO">firefox-developer-edition-i18n-nn-no</pkgname>
+              <pkgname lang="pl">firefox-developer-edition-i18n-pl</pkgname>
+              <pkgname lang="pt">firefox-developer-edition-i18n-pt-pt</pkgname>
+              <pkgname lang="pt_BR">firefox-developer-edition-i18n-pt-br</pkgname>
+              <pkgname lang="pa">firefox-developer-edition-i18n-pa-in</pkgname>
+              <pkgname lang="ro">firefox-developer-edition-i18n-ro</pkgname>
+              <pkgname lang="ru">firefox-developer-edition-i18n-ru</pkgname>
+              <pkgname lang="sr">firefox-developer-edition-i18n-sr</pkgname>
+              <pkgname lang="sk">firefox-developer-edition-i18n-sk</pkgname>
+              <pkgname lang="sl">firefox-developer-edition-i18n-sl</pkgname>
+              <pkgname lang="es">firefox-developer-edition-i18n-es-es</pkgname>
+              <pkgname lang="sv">firefox-developer-edition-i18n-sv-se</pkgname>
+              <pkgname lang="ta">firefox-developer-edition-i18n-ta</pkgname>
+              <pkgname lang="th">firefox-developer-edition-i18n-th</pkgname>
+              <pkgname lang="tr">firefox-developer-edition-i18n-tr</pkgname>
+              <pkgname lang="uk">firefox-developer-edition-i18n-uk</pkgname>
+              <pkgname lang="vi">firefox-developer-edition-i18n-vi</pkgname>
+              <pkgname lang="cy">firefox-developer-edition-i18n-cy</pkgname>            
+        </feature>
+        <feature name="google-chrome">
+        <pkgname>google-chrome</pkgname>
+        </feature>
+
+        <feature name="rtl8821ce-dkms-git">
+        <pkgname>rtl8821ce-dkms-git</pkgname>
+        </feature>
+        <feature name="megasync">
+        <pkgname>megasync</pkgname>
+        </feature>
+
+        <feature name="hunspell">
+                <pkgname lang="de">hunspell-de</pkgname> <!-- German hunspell dictionaries -->
+                <pkgname lang="en">hunspell-en_au</pkgname> <!-- English hunspell dictionaries -->
+                <pkgname lang="en">hunspell-en_ca</pkgname> <!-- English hunspell dictionaries -->
+                <pkgname lang="en">hunspell-en_gb</pkgname> <!-- English hunspell dictionaries -->
+                <pkgname lang="en">hunspell-en_us</pkgname> <!-- English hunspell dictionaries -->
+                <pkgname lang="es">hunspell-es_es</pkgname> <!-- Spanish hunspell dictionaries -->
+                <pkgname lang="fr">hunspell-fr</pkgname> <!-- French (modern) hunspell dictionaries -->
+                <pkgname lang="he">hunspell-he</pkgname> <!-- Hebrew hunspell dictionary -->
+                <pkgname lang="it">hunspell-it</pkgname> <!-- Italian dictionary for Hunspell -->
+                <pkgname lang="ro">hunspell-ro</pkgname> <!-- Romanian dictionary for Hunspell -->
+                <pkgname lang="el">hunspell-el</pkgname> <!-- Greek hunspell dictionary -->
+                <pkgname lang="hu">hunspell-hu</pkgname> <!-- Hungarian hunspell dictionary -->
+                <pkgname lang="nl">hunspell-nl</pkgname> <!-- Dutch hunspell dictionaries -->
+                <pkgname lang="pl">hunspell-pl</pkgname> <!-- Polish dictionary for Hunspell -->
+        </feature>
+        <feature name="vivaldi">
+            <pkgname>vivaldi</pkgname>
+            <pkgname>vivaldi-ffmpeg-codecs</pkgname>
+        </feature>
+        <feature name="opera">
+            <pkgname>opera</pkgname>
+        </feature>
+        <feature name="firewall">
+            <pkgname>gufw</pkgname>
+            <pkgname>ufw</pkgname>
+        </feature>
+        <feature name="firewire">
+            <pkgname>dvgrab</pkgname>
+            <pkgname>libffado</pkgname>
+            <pkgname>libraw1394</pkgname>
+        </feature>
+        <feature name="games">
+            <pkgname>steam-native-runtime</pkgname>
+            <pkgname>steam</pkgname>
+            <pkgname>playonlinux</pkgname>
+            <pkgname arch="x86_64">lib32-libldap</pkgname>
+        </feature>
+        <feature name="gtk-play">
+            <pkgname>0ad</pkgname>
+            <pkgname>megaglest</pkgname>
+            <pkgname>supertux</pkgname>
+            <pkgname>supertuxkart</pkgname>
+            <pkgname>wesnoth</pkgname>
+            <pkgname>xonotic</pkgname>
+            <pkgname>aisleriot</pkgname>
+            <pkgname>astromenace</pkgname>
+            <pkgname>extremetuxracer</pkgname>
+            <pkgname>gnome-chess</pkgname>
+            <pkgname>gnome-mines</pkgname>
+            <pkgname>gnome-sudoku</pkgname>
+            <pkgname>gnome-mahjongg</pkgname>
+        </feature>
+        <feature name="qt-play">
+            <pkgname>0ad</pkgname>
+            <pkgname>megaglest</pkgname>
+            <pkgname>supertux</pkgname>
+            <pkgname>supertuxkart</pkgname>
+            <pkgname>wesnoth</pkgname>
+            <pkgname>xonotic</pkgname>
+            <pkgname>aisleriot</pkgname>
+            <pkgname>astromenace</pkgname>
+            <pkgname>extremetuxracer</pkgname>
+            <pkgname>knights</pkgname>
+            <pkgname>kmines</pkgname>
+            <pkgname>ksudoku</pkgname>
+            <pkgname>kmahjongg</pkgname>
+        </feature>
+        <feature name="graphics">
+            <pkgname>gimp</pkgname>
+            <pkgname>gthumb</pkgname>
+            <pkgname>rapid-photo-downloader</pkgname>
+            <pkgname>raw-thumbnailer</pkgname>
+            <pkgname>rawtherapee</pkgname>
+            <pkgname>darktable</pkgname>
+        </feature>
+        <feature name="hardinfo">
+            <pkgname>hardinfo</pkgname>
+        </feature>
+        <feature name="maintenance">
+            <pkgname>bleachbit</pkgname>
+            <pkgname>timeshift</pkgname>
+            <pkgname>xapp</pkgname>
+            <pkgname>stacer</pkgname>
+        </feature>
+        <feature name="movie">
+            <pkgname>openshot</pkgname>
+            <pkgname>kdenlive</pkgname>
+            <pkgname>dvdauthor</pkgname>
+            <pkgname>frei0r-plugins</pkgname>
+            <pkgname>pitivi</pkgname>
+            <pkgname>avidemux-cli</pkgname>
+        </feature>
+        <feature name="plymouth">
+            <pkgname>plymouth</pkgname>
+            <pkgname>arch-plymouthize</pkgname>
+            <pkgname>plymouth-theme-arch-charge-big</pkgname>
+        </feature>
+        <feature name="redshift">
+            <pkgname>redshift</pkgname>
+            <pkgname>redshiftgui-bin</pkgname>
+        </feature>
+        <feature name="skype">
+            <pkgname>skypeforlinux-stable-bin</pkgname>
+        </feature>
+        <feature name="spotify">
+            <pkgname>spotify</pkgname>
+        </feature>
+        <feature name="email">
+            <pkgname>thunderbird</pkgname>
+              <pkgname lang="sq">thunderbird-i18n-sq</pkgname>
+              <pkgname lang="ar">thunderbird-i18n-ar</pkgname>
+              <pkgname lang="ast">thunderbird-i18n-ast</pkgname>
+              <pkgname lang="eu">thunderbird-i18n-eu</pkgname>
+              <pkgname lang="be">thunderbird-i18n-be</pkgname>
+              <pkgname lang="bg">thunderbird-i18n-bg</pkgname>
+              <pkgname lang="ca">thunderbird-i18n-ca</pkgname>
+              <pkgname lang="zh_CN">thunderbird-i18n-zh-cn</pkgname>
+              <pkgname lang="zh_TW">thunderbird-i18n-zh-tw</pkgname>
+              <pkgname lang="hr">thunderbird-i18n-hr</pkgname>
+              <pkgname lang="cs">thunderbird-i18n-cs</pkgname>
+              <pkgname lang="da">thunderbird-i18n-da</pkgname>
+              <pkgname lang="nl">thunderbird-i18n-nl</pkgname>
+              <pkgname lang="et">thunderbird-i18n-et</pkgname>
+              <pkgname lang="fi">thunderbird-i18n-fi</pkgname>
+              <pkgname lang="fr">thunderbird-i18n-fr</pkgname>
+              <pkgname lang="gl">thunderbird-i18n-gl</pkgname>
+              <pkgname lang="de">thunderbird-i18n-de</pkgname>
+              <pkgname lang="el">thunderbird-i18n-el</pkgname>
+              <pkgname lang="he">thunderbird-i18n-he</pkgname>
+              <pkgname lang="hu">thunderbird-i18n-hu</pkgname>
+              <pkgname lang="id">thunderbird-i18n-id</pkgname>
+              <pkgname lang="it">thunderbird-i18n-it</pkgname>
+              <pkgname lang="ja">thunderbird-i18n-ja</pkgname>
+              <pkgname lang="ko">thunderbird-i18n-ko</pkgname>
+              <pkgname lang="lt">thunderbird-i18n-lt</pkgname>
+              <pkgname lang="nb_NO">thunderbird-i18n-nb-no</pkgname>
+              <pkgname lang="nn_NO">thunderbird-i18n-nn-no</pkgname>
+              <pkgname lang="pl">thunderbird-i18n-pl</pkgname>
+              <pkgname lang="pt">thunderbird-i18n-pt-pt</pkgname>
+              <pkgname lang="pt_BR">thunderbird-i18n-pt-br</pkgname>
+              <pkgname lang="ro">thunderbird-i18n-ro</pkgname>
+              <pkgname lang="ru">thunderbird-i18n-ru</pkgname>
+              <pkgname lang="sr">thunderbird-i18n-sr</pkgname>
+              <pkgname lang="sk">thunderbird-i18n-sk</pkgname>
+              <pkgname lang="sl">thunderbird-i18n-sl</pkgname>
+              <pkgname lang="es">thunderbird-i18n-es-es</pkgname>
+              <pkgname lang="sv">thunderbird-i18n-sv-se</pkgname>
+              <pkgname lang="tr">thunderbird-i18n-tr</pkgname>
+              <pkgname lang="uk">thunderbird-i18n-uk</pkgname>
+              <pkgname lang="vi">thunderbird-i18n-vi</pkgname>
+              <pkgname lang="cy">thunderbird-i18n-cy</pkgname>
+        </feature>
+        <feature name="lamp">
+            <pkgname>apache</pkgname>
+            <pkgname>php</pkgname>
+            <pkgname>php-apache</pkgname>
+            <pkgname>mariadb</pkgname>
+            <pkgname>phpmyadmin</pkgname>
+            <pkgname>php-mcrypt</pkgname>
+        </feature>
+        <feature name="lemp">
+            <pkgname>nginx</pkgname>
+            <pkgname>php-fpm</pkgname>
+            <pkgname>mariadb</pkgname>
+            <pkgname>phpmyadmin</pkgname>
+            <pkgname>php-mcrypt</pkgname>
+        </feature>
+        <feature name="lts">
+            <pkgname>linux-lts</pkgname>
+            <pkgname>linux-lts-headers</pkgname>
+        </feature>
+       <feature name="freeoffice">
+              <pkgname>freeoffice</pkgname>
+        </feature>
+       <feature name="libreoffice">
+              <pkgname>libreoffice-fresh</pkgname>
+              <pkgname lang="sq">libreoffice-fresh-sq</pkgname>
+              <pkgname lang="am">libreoffice-fresh-am</pkgname>
+              <pkgname lang="ar">libreoffice-fresh-ar</pkgname>
+              <pkgname lang="ast">libreoffice-fresh-ast</pkgname>
+              <pkgname lang="eu">libreoffice-fresh-eu</pkgname>
+              <pkgname lang="be">libreoffice-fresh-be</pkgname>
+              <pkgname lang="bn">libreoffice-fresh-bn</pkgname>
+              <pkgname lang="bs">libreoffice-fresh-bs</pkgname>
+              <pkgname lang="bg">libreoffice-fresh-bg</pkgname>
+              <pkgname lang="ca">libreoffice-fresh-ca</pkgname>
+              <pkgname lang="zh_CN">libreoffice-fresh-zh-cn</pkgname>
+              <pkgname lang="zh_TW">libreoffice-fresh-zh-tw</pkgname>
+              <pkgname lang="hr">libreoffice-fresh-hr</pkgname>
+              <pkgname lang="cs">libreoffice-fresh-cs</pkgname>
+              <pkgname lang="da">libreoffice-fresh-da</pkgname>
+              <pkgname lang="nl">libreoffice-fresh-nl</pkgname>
+              <pkgname lang="eo">libreoffice-fresh-eo</pkgname>
+              <pkgname lang="et">libreoffice-fresh-et</pkgname>
+              <pkgname lang="fi">libreoffice-fresh-fi</pkgname>
+              <pkgname lang="fr">libreoffice-fresh-fr</pkgname>
+              <pkgname lang="gl">libreoffice-fresh-gl</pkgname>
+              <pkgname lang="ka">libreoffice-fresh-ka</pkgname>
+              <pkgname lang="de">libreoffice-fresh-de</pkgname>
+              <pkgname lang="el">libreoffice-fresh-el</pkgname>
+              <pkgname lang="gu">libreoffice-fresh-gu</pkgname>
+              <pkgname lang="he">libreoffice-fresh-he</pkgname>
+              <pkgname lang="hi">libreoffice-fresh-hi</pkgname>
+              <pkgname lang="hu">libreoffice-fresh-hu</pkgname>
+              <pkgname lang="id">libreoffice-fresh-id</pkgname>
+              <pkgname lang="ga">libreoffice-fresh-ga</pkgname>
+              <pkgname lang="it">libreoffice-fresh-it</pkgname>
+              <pkgname lang="ja">libreoffice-fresh-ja</pkgname>
+              <pkgname lang="kk">libreoffice-fresh-kk</pkgname>
+              <pkgname lang="km">libreoffice-fresh-km</pkgname>
+              <pkgname lang="ko">libreoffice-fresh-ko</pkgname>
+              <pkgname lang="lv">libreoffice-fresh-lv</pkgname>
+              <pkgname lang="lt">libreoffice-fresh-lt</pkgname>
+              <pkgname lang="mk">libreoffice-fresh-mk</pkgname>
+              <pkgname lang="ml">libreoffice-fresh-ml</pkgname>
+              <pkgname lang="mr">libreoffice-fresh-mr</pkgname>
+              <pkgname lang="ne">libreoffice-fresh-ne</pkgname>
+              <pkgname lang="pl">libreoffice-fresh-pl</pkgname>
+              <pkgname lang="pt">libreoffice-fresh-pt</pkgname>
+              <pkgname lang="pt_BR">libreoffice-fresh-pt-br</pkgname>
+              <pkgname lang="ro">libreoffice-fresh-ro</pkgname>
+              <pkgname lang="ru">libreoffice-fresh-ru</pkgname>
+              <pkgname lang="sr">libreoffice-fresh-sr</pkgname>
+              <pkgname lang="sk">libreoffice-fresh-sk</pkgname>
+              <pkgname lang="sl">libreoffice-fresh-sl</pkgname>
+              <pkgname lang="es">libreoffice-fresh-es</pkgname>
+              <pkgname lang="sv">libreoffice-fresh-sv</pkgname>
+              <pkgname lang="ta">libreoffice-fresh-ta</pkgname>
+              <pkgname lang="th">libreoffice-fresh-th</pkgname>
+              <pkgname lang="tr">libreoffice-fresh-tr</pkgname>
+              <pkgname lang="uk">libreoffice-fresh-uk</pkgname>
+              <pkgname lang="vi">libreoffice-fresh-vi</pkgname>
+              <pkgname lang="cy">libreoffice-fresh-cy</pkgname>
+        </feature>
+        <feature name="wps-office">
+            <pkgname>wps-office</pkgname>
+            <pkgname>wps-office-mime</pkgname>
+            <pkgname>wps-office-fonts</pkgname>
+            <!-- <pkgname lang="es">wps-office-mui-es-es</pkgname> -->
+            <!-- <pkgname lang="es">wps-office-extension-spanish-dictionary</pkgname> -->
+            <!-- <pkgname lang="pt_BR">wps-office-mui-pt-br</pkgname>-->
+            <!-- <pkgname lang="pt_BR">wps-office-extension-portuguese-brazilian-dictionary</pkgname> -->
+            <!-- <pkgname lang="ru">wps-office-mui-ru-ru</pkgname> -->
+            <!-- <pkgname lang="ru">wps-office-extension-russian-dictionary</pkgname> -->
+            <!-- <pkgname lang="uk">wps-office-extension-english-uk-dictionary</pkgname> -->
+       </feature>
+        <feature name="power">
+            <pkgname>tlp</pkgname>
+            <pkgname>thermald</pkgname>
+        </feature>
+        <feature name="sshd">
+            <pkgname>openssh</pkgname>
+        </feature>
+        <feature name="visual">
+            <!-- Change compton for picom -->
+            <pkgname>picom</pkgname>
+            <!-- <pkgname>paranoid</pkgname> -->
+        </feature>
+	<feature name="nemo">
+            <pkgname>nemo</pkgname>
+            <!-- <pkgname>nemo-root</pkgname> -->
+        </feature>
+	<feature name="nautilus">
+	    <pkgname>nautilus</pkgname>
+            <!-- <pkgname>nautilus-root</pkgname> -->
+        </feature>
+        <feature name="qownnotes">
+            <pkgname>qownnotes</pkgname>
+	</feature>
+        <feature name="vlc">
+            <pkgname>vlc</pkgname>
+            <pkgname>phonon-qt5-vlc</pkgname>
+        </feature>
+        <feature name="wallpapers">
+            <pkgname>variety</pkgname>
+        </feature>
+        <feature name="wine">
+            <pkgname>wine</pkgname>
+            <pkgname>winetricks</pkgname>
+            <pkgname>playonlinux</pkgname>
+            <pkgname>lutris</pkgname>
+        </feature>
+    </features>
+
+    <net>
+        <broadcom>
+            <pkgname>broadcom-wl</pkgname>
+        </broadcom>
+    </net>
+
+    <filesystems>
+        <pkgname>btrfs-progs</pkgname>      <!-- for btrfs partitions -->
+        <pkgname>cifs-utils</pkgname>       <!-- for smb shares -->
+        <pkgname>dmraid</pkgname>           <!-- Device mapper RAID interface -->
+        <pkgname>dosfstools</pkgname>       <!-- for FAT16 and FAT32 partitions -->
+        <pkgname>exfat-utils</pkgname>      <!-- for exFAT partitions -->
+        <pkgname>e2fsprogs</pkgname>        <!-- Ext2/3/4 filesystem utilities -->
+        <pkgname>f2fs-tools</pkgname>       <!-- for Flash-Friendly File System -->
+        <pkgname>jfsutils</pkgname>         <!-- for jfs partitions -->
+        <pkgname>nfs-utils</pkgname>        <!-- for Network File Systems (NFS)-->
+        <pkgname>nilfs-utils</pkgname>      <!-- for nilfs2 support -->
+        <pkgname>ntfs-3g</pkgname>          <!-- for NTFS support -->
+        <pkgname>reiserfsprogs</pkgname>    <!-- for reiser partitions -->
+        <pkgname>xfsprogs</pkgname>         <!-- for xfs partitions -->
+    </filesystems>
+
+    <zfs>
+        <!-- Don't exist anymore (any of this files) -->
+        <!--<pkgname>grub-zfs</pkgname> -->
+        <!-- <pkgname>spl</pkgname> -->
+        <!-- <pkgname>spl-utils</pkgname> -->
+        <!-- <pkgname>zfs</pkgname> -->
+        <!-- <pkgname>zfs-utils</pkgname> -->
+    </zfs>
+
+    <locale_fonts>
+        <chinese>
+            <pkgname>opendesktop-fonts</pkgname>
+        </chinese>
+    </locale_fonts>
+
+    <bootloaders>
+        <bootloader name="grub2">
+            <pkgname>efibootmgr</pkgname>
+            <pkgname>grub</pkgname>
+            <pkgname>os-prober</pkgname>
+            <pkgname>grub2-theme-vimix-git</pkgname>
+            <!-- <pkgname>rebornos-grub2-theme</pkgname> -->
+        </bootloader>
+        <bootloader name="systemd-boot">
+            <!-- previously called gummiboot, now comes with systemd -->
+            <pkgname>efibootmgr</pkgname>
+        </bootloader>
+        <bootloader name="refind">
+            <pkgname>efibootmgr</pkgname>
+            <pkgname>refind</pkgname>
+        </bootloader>
+    </bootloaders>
+</cnchi>

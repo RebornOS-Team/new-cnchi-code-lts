@@ -1,0 +1,12 @@
+NAME="RebornOS"
+VERSION="RebornOS Rolling"
+ID=RebornOS
+ID_LIKE=arch
+PRETTY_NAME="RebornOS"
+BUILD_ID=rolling
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://rebornos.org/"
+DOCUMENTATION_URL="https://osdn.net/projects/rebornos/wiki/TitleIndex/"
+SUPPORT_URL="https://rebornos.freeforums.net/"
+BUG_REPORT_URL="https://gitlab.com/reborn-os-team"
+LOGO=rebornos

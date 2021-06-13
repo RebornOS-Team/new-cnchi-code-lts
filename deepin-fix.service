@@ -1,0 +1,8 @@
+[Unit]
+Description=Deepin VM service
+
+[Service]
+ExecStart=/usr/bin/deepin-fix.sh
+
+[Install]
+WantedBy=multi-user.target

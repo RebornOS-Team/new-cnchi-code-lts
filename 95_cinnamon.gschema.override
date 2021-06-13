@@ -1,0 +1,11 @@
+[org.cinnamon.desktop.interface]
+keyboard-layout-show-flags=true
+gtk-theme = 'Mint-Y'
+icon-theme = 'Mint-Y'
+cursor-theme = 'Adwaita'
+clock-use-24h=true
+clock-show-date=false
+
+[org.cinnamon.desktop.wm.preferences]
+theme = 'Mint-Y'
+

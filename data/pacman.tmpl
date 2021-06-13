@@ -1,0 +1,26 @@
+[options]
+Architecture = auto
+SigLevel = Required DatabaseOptional
+LocalFileSigLevel = Optional
+
+RootDir = ${destDir}
+DBPath = ${destDir}/var/lib/pacman/
+CacheDir = ${destDir}/var/cache/pacman/pkg
+LogFile = /tmp/pacman.log
+
+# Repositories
+[Reborn-OS]
+SigLevel = Optional TrustAll
+Include = /etc/pacman.d/reborn-mirrorlist
+
+[core]
+Include = /etc/pacman.d/mirrorlist
+
+[extra]
+Include = /etc/pacman.d/mirrorlist
+
+[community]
+Include = /etc/pacman.d/mirrorlist
+
+[multilib]
+Include = /etc/pacman.d/mirrorlist

@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Generating dynamic menus for Openbox
+Exec=yadsu openbox-config.sh
+Name[en_US]=obmenu-gen

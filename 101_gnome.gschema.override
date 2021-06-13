@@ -1,0 +1,41 @@
+[org.gnome.desktop.interface]
+clock-format='24h'
+clock-show-date=true
+clock-show-seconds=false
+gtk-theme='Yaru'
+icon-theme='Papirus'
+
+[org.gnome.shell.extensions.user-theme]
+name='Yaru'
+
+[org.gnome.desktop.peripherals.touchpad]
+natural-scroll=true
+tap-to-click=true
+
+[org.gnome.desktop.datetime]
+automatic-timezone=true
+
+[org.gnome.desktop.wm.preferences]
+button-layout='appmenu:minimize,maximize,close'
+theme='Yaru'
+
+[org.gnome.nautilus.preferences]
+show-create-link=true
+
+[org.gnome.desktop.background]
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-day.jpg'
+
+[org.gnome.shell]
+enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com',  'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pamac-updates@manjaro.org']
+always-show-log-out=true
+
+[org.gnome.settings-daemon.plugins.xsettings]
+antialiasing='rgba'
+
+[org.gnome.mutter]
+center-new-windows = true
+dynamic-workspaces = true
+
+[org.gnome.shell.extensions.activities-config]
+activities-config-button-no-text=true
+

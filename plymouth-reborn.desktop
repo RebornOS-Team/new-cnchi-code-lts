@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Setting up Plymouth
+Exec=yadsu /usr/bin/plymouth.sh
+Name[en_US]=plymouth-reborn

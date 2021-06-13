@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Autostarting Conky for Openbox
+Exec=conky
+Name[en_US]=conky-start

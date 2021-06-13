@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Autostarting tint2 for Openbox
+Exec=tint2
+Name[en_US]=tint2-start
