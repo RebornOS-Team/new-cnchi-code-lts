@@ -5,7 +5,7 @@
 #
 #  Copyright © 2013-2016 Antergos
 #
-# Modifications by Rafael from RebornOS in 2020
+# Modifications by Rafael from RebornOS in 2020/2021
 #
 #  This file is part of Cnchi.
 #
@@ -167,21 +167,6 @@ kde_settings() {
 
     set_dmrc kde-plasma
 
-    # Force QtCurve to use our theme
-    # rm -R ${CN_DESTDIR}/usr/share/kstyle/themes/qtcurve.themerc
-
-    # Setup user defaults
-    #if [ -f "${CN_DESTDIR}/usr/share/antergos-kde-setup/install.sh" ]; then
-    #    chroot ${CN_DESTDIR} /usr/share/antergos-kde-setup/install.sh ${CN_USER_NAME}
-    #elif [ -f "${CN_DESTDIR}/usr/share/antergos-desktop" ]; then
-    #    chroot ${CN_DESTDIR} /usr/bin/antergos-desktop plasma ${CN_USER_NAME}
-    #fi
-
-    # cp ${CN_DESTDIR}/etc/skel/.gtkrc-2.0-kde4 ${CN_DESTDIR}/root
-    # chroot ${CN_DESTDIR} "ln -s /root/.gtkrc-2.0-kde4 /root/.gtkrc-2.0"
-
-    # Set default directories
-    # chroot ${CN_DESTDIR} su -c xdg-user-dirs-update ${CN_USER_NAME}
 }
 
 mate_settings() {
@@ -200,14 +185,6 @@ mate_settings() {
 
     cp ${APP_LIST} "${CN_DESTDIR}/usr/lib/linuxmint/mintMenu/applications.list"
 
-    # Work-around for bug in mate-panel - Fixed now in line 501 (Rafael from RebornOS)
-    #CN_POST_INSTALL_DIR=/usr/share/cnchi/scripts/postinstall
-    #CN_HOTFIX_SCRIPT="${CN_POST_INSTALL_DIR}/first-boot-hotfix.sh"
-    #CN_HOTFIX_DESKTOP="${CN_POST_INSTALL_DIR}/first-boot-hotfix.desktop"
-    #cp "${CN_HOTFIX_SCRIPT}" "${CN_DESTDIR}/usr/bin"
-    #mkdir -p "${CN_DESTDIR}/home/${CN_USER_NAME}/.config/autostart"
-    #cp "${CN_HOTFIX_DESKTOP}" "${CN_DESTDIR}/home/${CN_USER_NAME}/.config/autostart"
-    #chmod +x "${CN_DESTDIR}/usr/bin/first-boot-hotfix.sh"
 }
 
 nox_settings() {
@@ -306,13 +283,7 @@ postinstall() {
         cp "${FONTCONFIG_FILE}" "${FONTCONFIG_DIR}"
     fi
 
-    # Set RebornOS name in filesystem files
-    cp /etc/arch-release ${CN_DESTDIR}/etc/
-    # cp /etc/os-release "${CN_DESTDIR}/etc/"
-    sed -i 's|Arch|RebornOS|g' "${CN_DESTDIR}/etc/issue"
-    # os-release updated for RebornOS
-    rm ${CN_DESTDIR}/usr/lib/os-release
-    cp /usr/share/cnchi/os-release ${CN_DESTDIR}/usr/lib/
+
 
     # Set common desktop settigns
     common_settings
@@ -336,16 +307,11 @@ postinstall() {
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based <--- #" >> "${file}"
     done
 
-    # Uncomplicated Firewall Workaround (Rafael from RebornOS) Already solved by latest package update
-    # cp /usr/share/cnchi/gufw.svg ${CN_DESTDIR}/usr/share/icons/default/gufw.svg
-    # cp /usr/share/cnchi/gufw.png ${CN_DESTDIR}/usr/share/icons/hicolor/48x48/apps/gufw.png
-    # cp /usr/share/cnchi/gufw.desktop ${CN_DESTDIR}/usr/share/applications/gufw.desktop
-	
-	# pamac default configuration file
-	rm ${CN_DESTDIR}/etc/pamac.conf
-	cp /usr/share/cnchi/pamac.conf ${CN_DESTDIR}/etc/
 
 
+    # pamac default configuration file
+    rm ${CN_DESTDIR}/etc/pamac.conf
+    cp /usr/share/cnchi/pamac.conf ${CN_DESTDIR}/etc/
 
     # Start cups.service
     chroot ${CN_DESTDIR} systemctl enable cups.service
@@ -356,7 +322,14 @@ postinstall() {
     chmod 644 ${CN_DESTDIR}/etc/bluetooth/main.conf
     chroot ${CN_DESTDIR} systemctl enable bluetooth.service
 
-
+    # Change os-release file:
+    rm ${CN_DESTDIR}/usr/lib/os-release
+    cp /usr/share/cnchi/os-release ${CN_DESTDIR}/usr/lib/
+    chmod 644 ${CN_DESTDIR}/usr/lib/os-release
+    # Set RebornOS name in arch-release file
+    rm ${CN_DESTDIR}/etc/arch-release
+    cp /usr/share/cnchi/arch-release ${CN_DESTDIR}/etc/
+    chmod 644 ${CN_DESTDIR}/etc/arch-release
     
     # reborn-mirrorlist permission change
     chroot ${CN_DESTDIR} chmod 644 /etc/pacman.d/reborn-mirrorlist
