@@ -1,2 +1,4 @@
-# new-cnchi-code-lts
-New cnchi code lts
+# new-cnchi-code
+New cnchi code used
+
+See the Wiki.

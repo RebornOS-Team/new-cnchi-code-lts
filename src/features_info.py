@@ -45,19 +45,18 @@ ICON_NAMES = {
     'firefox': 'firefox',
     'firefox-developer-edition': 'firefox-developer-edition',
     'google-chrome': 'google-chrome',
-    'rtl8821ce-dkms-git': 'rtl8821ce-dkms-git',
-    'megasync': 'megasync',
+    'rtl8821ce-dkms-git': 'network-wireless-hotspot',
+    'megasync': 'mega',
 #    'firewall': 'network-server',
     'fonts': 'preferences-desktop-font',
     'firewire': 'drive-harddisk-ieee1394',
     'games': 'applications-games',
-#    'graphics': 'apps.com.pixlr',
-    'graphics': 'accessories-painting',
+    'graphics': 'image-x-generic',
     'gtk-play': 'applications-games',
     'hardinfo': 'hardinfo',
     'qt-play': 'applications-games',
     'maintenance': 'baobab',
-    'movie': 'artemanufrij.screencast',
+    'movie': 'media-video',
     'graphic_drivers': 'gnome-system',
     'lamp': 'applications-internet',
     'lts': 'applications-accessories',
@@ -70,7 +69,7 @@ ICON_NAMES = {
     'power': 'battery-full-charged',
 #    'plymouth': 'debian-plymouth-manager',
     'redshift': 'redshift',
-    'sshd': 'gnome-mime-x-directory-smb-share',
+    'sshd': 'samba',
     'spotify': 'spotify-client',
 #    'skype': 'skype',
     'visual': 'video-display',
@@ -78,7 +77,8 @@ ICON_NAMES = {
     'vlc': 'vlc',
     'wallpapers': 'background',
     'wine': 'wine',
-    'opera': 'opera'}
+    'opera': 'opera',
+    'hunspell': 'text-r'}
 
 # These features are considered 'advanced' so it won't be shown by default
 ADVANCED = [ 'lamp', 'sshd', 'visual', 'firewire', 'broadcom', 'nautilus', 'nemo', 'email', 'wallpapers', 'hunspell' ]

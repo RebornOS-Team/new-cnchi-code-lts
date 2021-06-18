@@ -100,6 +100,16 @@
             </packages>
         </edition>
 
+        <edition name="ukui" description="UKUI desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-ukui</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
         <edition name="Mate" description="MATE Desktop">
             <packages>
                 <pkgname>rebornos-cosmic-mate</pkgname>
@@ -185,7 +195,17 @@
                <!-- <pkgname>flatplat-blue-theme</pkgname> -->
                <pkgname dm='true' name='lightdm'>lightdm</pkgname>
            </packages>
-       </edition>
+        </edition>
+	
+        <edition name="LXDE" description="LXDE desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-lxde</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
     </editions>
 
     <!-- User desired features -->
