@@ -200,34 +200,6 @@ lxqt_settings() {
     set_dmrc razor
 }
 
-#enlightenment_settings() {
-#    set_gsettings
-#    set_xscreensaver
-
-    # http://git.enlightenment.org/core/enlightenment.git/plain/data/tools/enlightenment_remote
-
-    # Setup user defaults
-    #chroot ${CN_DESTDIR} /usr/share/antergos-enlightenment-setup/install.sh ${CN_USER_NAME}
-    #chroot ${CN_DESTDIR} /usr/bin/antergos-desktop enlightenment ${CN_USER_NAME}
-
-    # Set Keyboard layout
-#    E_CFG="/home/${CN_USER_NAME}/.e/e/config/standard/e.cfg"
-#    E_SRC="/home/${CN_USER_NAME}/.e/e/config/standard/e.src"
-
-#    ${CN_DESTDIR}/usr/bin/eet -d ${E_CFG} config ${E_SRC}
-#    sed -i 's/"us"/"${CN_KEYBOARD_LAYOUT}"/' ${E_SRC}
-#    if [[ "${CN_KEYBOARD_VARIANT}" != '' ]]; then
-#        sed -i 's/"basic"/"${CN_KEYBOARD_VARIANT}"/' ${E_SRC}
-#    fi
-#    ${CN_DESTDIR}/usr/bin/eet -e ${E_CFG} config ${E_SRC} 1
-
-#    set_dmrc enlightenment
-
-#    echo "QT_STYLE_OVERRIDE=gtk" >> ${CN_DESTDIR}/etc/environment
-
-    # Add lxpolkit to autostart apps
-#    cp /etc/xdg/autostart/lxpolkit.desktop ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/autostart
-#}
 
 budgie_settings() {
     set_gsettings
@@ -309,6 +281,16 @@ postinstall() {
 
 
 
+
+
+
+    # ===>>> Start RebornOS SP Changes: <<<=== #
+    
+    # Copy pacman.conf file over
+    rm ${CN_DESTDIR}/etc/pacman.conf
+    cp /usr/share/cnchi/pacman.conf ${CN_DESTDIR}/etc/
+    cp /etc/pacman.d/reborn-mirrorlist ${CN_DESTDIR}/etc/pacman.d/
+
     # pamac default configuration file
     rm ${CN_DESTDIR}/etc/pamac.conf
     cp /usr/share/cnchi/pamac.conf ${CN_DESTDIR}/etc/
@@ -333,6 +315,20 @@ postinstall() {
     
     # reborn-mirrorlist permission change
     chroot ${CN_DESTDIR} chmod 644 /etc/pacman.d/reborn-mirrorlist
+    
+    # Used for flatpak selection:
+    # cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
+    # cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
+    # cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
+    # cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
+    # cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
+    
+    # ==>>> End RebornOS SP Changes <<<=== #
+
+
+
+
+
 
     # Configure makepkg so that it doesn't compress packages after building.
     # Most users are building packages to install them locally so there's no need for compression.
@@ -342,12 +338,7 @@ postinstall() {
     if [[ deepin = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/deepin-fix.sh ${CN_DESTDIR}/usr/bin/
         cp /usr/share/cnchi/deepin-fix.service ${CN_DESTDIR}/etc/systemd/system/
         chroot ${CN_DESTDIR} sudo systemctl enable deepin-fix.service
@@ -357,12 +348,7 @@ postinstall() {
 
     if [[ gnome = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable gdm
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Gnome Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Gnome Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -392,30 +378,11 @@ postinstall() {
         #echo "default-user-image = /usr/share/pixmaps/avatar.png" >> ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
     fi
 
-#    if [[ apricity = "${CN_DESKTOP}" ]]; then
-#        chroot ${CN_DESTDIR} systemctl -fq enable gdm
-#        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-#        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-#        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-#        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-#        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-#        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
-#        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Apricity Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
-#        echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
-#        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Apricity Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
-#        chroot ${CN_DESTDIR} systemctl enable earlyoom
-#        chroot ${CN_DESTDIR} systemctl enable ufw
-#    fi
 
     if [[ kde = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable sddm
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         chroot ${CN_DESTDIR} systemctl enable earlyoom
         chroot ${CN_DESTDIR} systemctl enable ufw
         #==>> KDE customization removed as it does not install properly >>==#
@@ -440,12 +407,7 @@ postinstall() {
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
 	# sed -i 's/^webkit_theme\s*=\s*\(.*\)/webkit_theme = lightdm-webkit-theme-aether #\1/g' ${CN_DESTDIR}/etc/lightdm/lightdm-webkit2-greeter.conf
 	# sed -i 's/^\(#?greeter\)-session\s*=\s*\(.*\)/greeter-session = lightdm-webkit2-greeter #\1/ #\2g' ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Budgie Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Budgie Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -464,12 +426,7 @@ postinstall() {
         # chroot ${CN_DESTDIR} systemctl -fq enable sddm
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for i3 Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for i3 Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -497,40 +454,11 @@ postinstall() {
         chmod 644 ${CN_DESTDIR}/home/${CN_USER_NAME}/.config/i3/config
     fi
 
- #   if [ -f "${CN_DESTDIR}/usr/bin/enlightenment" ]; then
- #       # chroot ${CN_DESTDIR} systemctl -fq enable sddm
- #       chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
- #       cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
- #       cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
- #       cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
- #       cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
- #       cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
- #       cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
- #       cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
- #       echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Enlightenment Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
- #       echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
- #       echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Enlightenment Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
- #       chroot ${CN_DESTDIR} systemctl enable earlyoom
- #       chroot ${CN_DESTDIR} systemctl enable ufw
-         # Copy config files to use lightdm-gtk-greeter
-         # rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-         # cp /usr/share/cnchi/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
-         # chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-         # rm ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
-         # cp /usr/share/cnchi/lightdm-gtk-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-         # chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf         
- #   fi
-
     if [[ lxqt = "${CN_DESKTOP}" ]]; then
         # chroot ${CN_DESTDIR} systemctl -fq enable sddm.service
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         # cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         chroot ${CN_DESTDIR} systemctl enable earlyoom
         chroot ${CN_DESTDIR} systemctl enable ufw
         # Delete a remnant of lightdm
@@ -561,17 +489,7 @@ postinstall() {
     if [[ openbox = "${CN_DESKTOP}" ]]; then
         chmod go=rx ${CN_DESTDIR}/var/lib/lightdm-data
         chroot ${CN_DESTDIR} systemctl -fq enable lxdm
-        # cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        # cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        # cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        # cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        # cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        # cp /usr/share/cnchi/conky-start.desktop ${CN_DESTDIR}/etc/xdg/autostart/
         # cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
-        # cp /usr/share/cnchi/tint2-start.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        # cp /usr/share/cnchi/obmenu-gen.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        # cp /usr/share/cnchi/openbox-config.sh ${CN_DESTDIR}/usr/bin/
-        # chroot ${CN_DESTDIR} obmenu-generator -p -i
         chroot ${CN_DESTDIR} systemctl enable earlyoom
         chroot ${CN_DESTDIR} systemctl enable ufw
         # Copy config files to use lightdm-gtk-greeter
@@ -599,12 +517,7 @@ postinstall() {
         # chroot ${CN_DESTDIR} systemctl -fq enable sddm
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         # cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         # MATE panel bug fixed:
         chroot ${CN_DESTDIR} mate-panel --reset --layout default
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -625,12 +538,7 @@ if [[ xfce = "${CN_DESKTOP}" ]]; then
         # chroot ${CN_DESTDIR} systemctl -fq enable sddm
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         # cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for XFCE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for XFCE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -648,13 +556,8 @@ fi
 if [[ cinnamon = "${CN_DESKTOP}" ]]; then
         # chroot ${CN_DESTDIR} systemctl -fq enable sddm
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
-        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        # cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Cinnamon Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Cinnamon Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -675,12 +578,7 @@ if [[ pantheon = "${CN_DESKTOP}" ]]; then
         # chroot ${CN_DESTDIR} systemctl -fq enable sddm
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Pantheon Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Pantheon Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -698,12 +596,7 @@ fi
     if [[ ukui = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         #cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -725,12 +618,7 @@ fi
     if [[ lxde = "${CN_DESKTOP}" ]]; then
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         #cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
         echo "# ---> Added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
         echo "# ---> End added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
@@ -745,38 +633,11 @@ fi
         chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf        
     fi
 
-#if [[ windows = "${CN_DESKTOP}" ]]; then
-#        # chroot ${CN_DESTDIR} systemctl -fq enable sddm
-#        chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
-#        cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
-#        cp /usr/share/cnchi/flatpak.sh ${CN_DESTDIR}/usr/bin/
-#        cp /usr/share/cnchi/pkcon.sh ${CN_DESTDIR}/usr/bin/
-#        cp /usr/share/cnchi/pkcon2.sh ${CN_DESTDIR}/usr/bin/
-#        cp /usr/share/cnchi/flatpak.desktop ${CN_DESTDIR}/usr/share/applications/
-#        cp /usr/share/cnchi/update.desktop ${CN_DESTDIR}/etc/xdg/autostart/
-#        cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
-#        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Windows Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
-#        echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
-#        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Windows Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
-#        chroot ${CN_DESTDIR} systemctl enable earlyoom
-#        chroot ${CN_DESTDIR} systemctl enable ufw
-         # Copy config files to use lightdm-gtk-greeter
-         #rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-         # cp /usr/share/cnchi/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
-         # chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-         # rm ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
-         # cp /usr/share/cnchi/lightdm-gtk-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-         # chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
-#fi
-
 if [[ base = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm
 fi
 
-    # Copy pacman.conf file over
-    rm ${CN_DESTDIR}/etc/pacman.conf
-    cp /usr/share/cnchi/pacman.conf ${CN_DESTDIR}/etc/
-    cp /etc/pacman.d/reborn-mirrorlist ${CN_DESTDIR}/etc/pacman.d/
+
 
     #Copy blacklist.conf file over
     cp /etc/modprobe.d/blacklist.conf ${CN_DESTDIR}/etc/modprobe.d/
