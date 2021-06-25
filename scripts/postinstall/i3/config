@@ -185,5 +185,5 @@ exec --no-startup-id xrandr --output Virtual1 --mode 1680x1050
 # Wallpaper select
 exec --no-startup-id nitrogen --restore
 # Bauh in tray
-exec --no-startup-id bauh-tray
+exec --no-startup-id pamac-tray
 
