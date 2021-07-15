@@ -29,9 +29,6 @@ picture-uri='file:///usr/share/backgrounds/gnome/adwaita-day.jpg'
 enabled-extensions=['drive-menu@gnome-shell-extensions.gcampax.github.com', 'appindicatorsupport@rgcjonas.gmail.com',  'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'pamac-updates@manjaro.org']
 always-show-log-out=true
 
-[org.gnome.settings-daemon.plugins.xsettings]
-antialiasing='rgba'
-
 [org.gnome.mutter]
 center-new-windows = true
 dynamic-workspaces = true
