@@ -186,4 +186,5 @@ exec --no-startup-id xrandr --output Virtual1 --mode 1680x1050
 exec --no-startup-id nitrogen --restore
 # pamac in tray
 exec --no-startup-id pamac-tray
-
+# Authentication
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
