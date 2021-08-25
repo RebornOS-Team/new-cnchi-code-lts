@@ -112,7 +112,7 @@ class Installation():
         the root and boot devices itself. (We call it if using ZFS, though) """
 
         if os.path.exists(DEST_DIR) and not self.method == "zfs":
-            # If we're recovering from a failed/stoped install, there'll be
+            # If we're recovering from a failed/stopped install, they'll be
             # some mounted directories. Try to unmount them first.
             # We use unmount_all_in_directory from auto_partition to do this.
             # ZFS already mounts everything automagically (except /boot that
@@ -288,7 +288,7 @@ class Installation():
             self.hardware_install.pre_install(DEST_DIR)
         except Exception as ex:
             template = "Error in hardware module. " \
-                       "An exception of type {0} occured. Arguments:\n{1!r}"
+                       "An exception of type {0} occurred. Arguments:\n{1!r}"
             message = template.format(type(ex).__name__, ex.args)
             logging.error(message)
 
@@ -392,7 +392,7 @@ class Installation():
         except Exception as ex:
             self.pacman = None
             template = ("Can't initialize pyalpm. "
-                        "An exception of type {0} occured. Arguments:\n{1!r}")
+                        "An exception of type {0} occurred. Arguments:\n{1!r}")
             message = template.format(type(ex).__name__, ex.args)
             logging.error(message)
             raise InstallError(message)
