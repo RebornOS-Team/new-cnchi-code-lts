@@ -338,10 +338,12 @@ postinstall() {
     if [[ deepin = "${CN_DESKTOP}" ]]; then
         rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         cp /etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
+	chroot ${CN_DESTDIR} systemctl -fq disable lightdm
+	chroot ${CN_DESTDIR} systemctl -fq enable sddm
         #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/deepin-fix.sh ${CN_DESTDIR}/usr/bin/
-        cp /usr/share/cnchi/deepin-fix.service ${CN_DESTDIR}/etc/systemd/system/
-        chroot ${CN_DESTDIR} sudo systemctl enable deepin-fix.service
+        #cp /usr/share/cnchi/deepin-fix.sh ${CN_DESTDIR}/usr/bin/
+        #cp /usr/share/cnchi/deepin-fix.service ${CN_DESTDIR}/etc/systemd/system/
+        #chroot ${CN_DESTDIR} sudo systemctl enable deepin-fix.service
         chroot ${CN_DESTDIR} systemctl enable earlyoom
         chroot ${CN_DESTDIR} systemctl enable ufw
     fi
