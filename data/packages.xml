@@ -139,6 +139,7 @@
                 <pkgname>lightdm-gtk-greeter</pkgname>
                 <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
                 <pkgname>lightdm-gtk-greeter-settings</pkgname>
+                <pkgname>discover</pkgname>
             </packages>
         </edition>
 

@@ -47,7 +47,8 @@ ICON_NAMES = {
     'google-chrome': 'google-chrome',
     'rtl8821ce-dkms-git': 'network-wireless-hotspot',
     'megasync': 'mega',
-#    'firewall': 'network-server',
+#   'firewall': 'network-server',
+    'onlyoffice': 'onlyoffice-desktopeditors',
     'fonts': 'preferences-desktop-font',
     'firewire': 'drive-harddisk-ieee1394',
     'games': 'applications-games',
@@ -57,7 +58,7 @@ ICON_NAMES = {
     'qt-play': 'applications-games',
     'maintenance': 'baobab',
     'movie': 'media-video',
-    'graphic_drivers': 'gnome-system',
+#   'graphic_drivers': 'gnome-system',
     'lamp': 'applications-internet',
     'lts': 'applications-accessories',
     'nemo': 'system-file-manager',
@@ -67,11 +68,11 @@ ICON_NAMES = {
     'libreoffice': 'libreoffice-writer',
     'freeoffice': 'libreoffice-writer',
     'power': 'battery-full-charged',
-#    'plymouth': 'debian-plymouth-manager',
+#   'plymouth': 'debian-plymouth-manager',
     'redshift': 'redshift',
     'sshd': 'samba',
     'spotify': 'spotify-client',
-#    'skype': 'skype',
+#   'skype': 'skype',
     'visual': 'video-display',
     'vivaldi': 'vivaldi',
     'vlc': 'vlc',
@@ -84,7 +85,7 @@ ICON_NAMES = {
 ADVANCED = [ 'lamp', 'sshd', 'visual', 'firewire', 'broadcom', 'nautilus', 'nemo', 'email', 'wallpapers', 'hunspell' ]
 
 # These features are considered 'basic', and will be shown by default
-BASIC = ['opera', 'wine', 'wallpapers', 'vlc', 'vivaldi', 'visual', 'spotify', 'redshift', 'power', 'libreoffice', 'wps-office', 'freeoffice', 'qownnotes', 'lts', 'graphic_drivers', 'movie', 'maintenance', 'qt-play', 'hardinfo', 'gtk-play', 'graphics', 'games', 'fonts', 'firefox', 'firefox-developer-edition', 'google-chrome', 'email', 'dropbox', 'chromium', 'cups', 'bluetooth', 'aur', 'a11y'
+BASIC = ['opera', 'wine', 'wallpapers', 'vlc', 'vivaldi', 'visual', 'spotify', 'redshift', 'power', 'libreoffice', 'wps-office', 'onlyoffice', 'freeoffice', 'qownnotes', 'lts', 'movie', 'maintenance', 'qt-play', 'hardinfo', 'gtk-play', 'graphics', 'games', 'fonts', 'firefox', 'firefox-developer-edition', 'google-chrome', 'email', 'dropbox', 'chromium', 'cups', 'bluetooth', 'aur', 'a11y'
 'rtl8821ce-dkms-git', 'megasync']
 
 # See http://docs.python.org/2/library/gettext.html "22.1.3.4. Deferred translations"
@@ -111,7 +112,7 @@ TITLES = {
     'fonts': _("Extra Truetype Fonts"),
     'firewire': _("Support For Firewire Devices"),
     'games': _("Steam + PlayonLinux"),
-    'graphic_drivers': _("Graphic drivers (Proprietary)"),
+#    'graphic_drivers': _("Graphic drivers (Proprietary)"),
     'gtk-play': _("Popular Games for Linux"),
     'qt-play': _("Popular Games for Linux"),
     'hardinfo': _("Hardware Analysis"),
@@ -123,6 +124,7 @@ TITLES = {
     'lts': _("Kernel (LTS version)"),
     'libreoffice': _("LibreOffice"),
     'wps-office': _("WPS Office"),
+    'onlyoffice': _("OnlyOffice Destopeditors"),
     'freeoffice': _("FreeOffice"),
     'power': _("Power Saving"),
 #    'plymouth': _("Boot Screen"),
@@ -156,7 +158,7 @@ DESCRIPTIONS = {
     'fonts': _("TrueType fonts from the Google Fonts project."),
     'firewire': _("Linux Support For Firewire Devices"),
     'games': _("Installs Steam and Playonlinux for gaming enthusiasts."),
-    'graphic_drivers': _("Installs AMD or Nvidia proprietary graphic driver."),
+#   'graphic_drivers': _("Installs AMD or Nvidia proprietary graphic driver."),
     'gtk-play': _("Popular games for Linux, all created for use on your Desktop Environment"),
     'hunspell': _("Spell Check Packages for RebornOS"),
     'hardinfo': _("Easy application for extensive hardware analysis"),
@@ -169,12 +171,13 @@ DESCRIPTIONS = {
     'wps-office': _("Office Suit for Linux, made for those used to MS Office"),
     'libreoffice': _("Open source office suite. Supports editing MS Office files."),
     'freeoffice': _("FreeOffice is a full-featured Office suite."),
+    'onlyoffice': _("OnlyOffice Desktop Editors is a free open-source office suite."),
     'visual': _("Enable transparency, shadows, and other desktop effects."),
     'vlc': _("Ultimate Media Player For Linux"),
-#    'firewall': _("Control the incoming and outgoing network traffic."),
+#   'firewall': _("Control the incoming and outgoing network traffic."),
     'lts': _("Long term support (LTS) Linux kernel and modules."),
     'power': _("Power Saving Tools Geared Specifically for Laptops"),
-#    'plymouth': _("Uses Plymouth To Offer You a Polished Boot Screen"),
+#   'plymouth': _("Uses Plymouth To Offer You a Polished Boot Screen"),
     'redshift': _("Color Temperature Adjuster Based on Local Time"),
     'sshd': _("Provides client access to shared files and printers."),
 #   'skype': _("A User Friendly Video Chat Tool Made By Microsoft"),
@@ -264,9 +267,9 @@ TOOLTIPS = {
                "linux in technology and gaming, while PlayOnLinux\n"
                "is a very easy manager to setting up games to play\n"
                "through wine, instead of doing it manually."),
-    'graphic_drivers': _("Installs AMD or Nvidia proprietary graphics driver instead\n"
-                         "of the open-source variant. Do NOT install this if you have a\n"
-                         "Nvidia Optimus laptop"),
+ #   'graphic_drivers': _("Installs AMD or Nvidia proprietary graphics driver instead\n"
+ #                        "of the open-source variant. Do NOT install this if you have a\n"
+ #                        "Nvidia Optimus laptop"),
     'gtk-play': _("Popular games for Linux, ranging from complex games like 0 A.D,\n"
                   "Battle for Wesnoth, and Super Tux to basics like Solitaire,\n"
                   "Mines, and Soduku - all tailored for a gtk environemt"),
@@ -311,6 +314,11 @@ TOOLTIPS = {
                 "and Linux, that gives you six feature-rich applications\n"
                 "for all your document production and data processing\n"
                 "needs: Writer, Calc, Impress, Draw, Math and Base."),
+    'onlyoffice': _("OnlyOffice Desktop Editors is a free open-source office suite\n"
+                    "that combines text, spreadsheet, and presentation editors allowing\n"
+                    "to create, view, and edit documents stored on your Windows/Linux PC\n"
+                    "or Mac without an Internet connection. It is fully compatible with\n"
+                    "OOXML formats."),
     'power': _("Two programs are installed through this, namely TLP and Thermald.\n"
                "TLP will automatically adjust your laptop to optimize your battery\n"
                "performance in the background without interfering with your daily use at all,\n"

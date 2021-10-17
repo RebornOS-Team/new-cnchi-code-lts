@@ -78,11 +78,11 @@ LIBS = {
     'qt': ["kde", "lxqt", "ukui", "cutefish"]
 }
 
-ALL_FEATURES = ["a11y", "aur", "bluetooth", "broadcom", "maintenance", "cups", "chromium", "email", "dropbox", "firefox", "firefox-developer-edition", "google-chrome", "rtl8821ce-dkms-git", "megasync", "firewire", "opera", "hardinfo", "hunspell", "vivaldi", "games", "graphics", "gtk-play", "hardinfo", "qt-play", "movie", "graphic_drivers", "lamp", "lts", "freeoffice", "wps-office", "libreoffice", "redshift", "power", "sshd", "spotify", "visual", "vlc", "nautilus", "nemo", "qownnotes", "wallpapers", "wine"]
+ALL_FEATURES = ["a11y", "aur", "bluetooth", "broadcom", "maintenance", "cups", "chromium", "email", "dropbox", "firefox", "firefox-developer-edition", "google-chrome", "rtl8821ce-dkms-git", "megasync", "firewire", "opera", "hardinfo", "hunspell", "vivaldi", "games", "graphics", "gtk-play", "hardinfo", "qt-play", "movie", "graphic_drivers", "lamp", "lts", "freeoffice", "wps-office", "libreoffice", "onlyoffice", "redshift", "power", "sshd", "spotify", "visual", "vlc", "nautilus", "nemo", "qownnotes", "wallpapers", "wine"]
 
 # Not all desktops have all features
 EXCLUDED_FEATURES = {
-    'base': ["bluetooth", "chromium", "maintenance", "dropbox", "email", "firefox", "firefox-developer-edition", "google-chrome", "firewire", "opera", "vivaldi", "games", "graphic_drivers", "graphics", "hardinfo", "hunspell", "freeoffice", "wps-office", "libreoffice", "visual", "vlc", "nautilus", "nemo", "qownnotes", "qt-play", "movie", "gtk-play", "qt-play", "power", "redshift", "spotify", "wallpapers", "wps-office", "libreoffice", "freeoffice"],
+    'base': ["bluetooth", "chromium", "maintenance", "dropbox", "email", "firefox", "firefox-developer-edition", "google-chrome", "firewire", "opera", "vivaldi", "games", "graphic_drivers", "graphics", "hardinfo", "hunspell", "freeoffice", "wps-office", "libreoffice", "onlyoffice", "visual", "vlc", "nautilus", "nemo", "qownnotes", "qt-play", "movie", "gtk-play", "qt-play", "power", "redshift", "spotify", "wallpapers", "wps-office", "libreoffice", "freeoffice"],
     'apricity': ["lamp", "visual", "nautilus", "qt-play"],
     'cinnamon': ["lamp", "visual", "nemo", "qt-play"],
     'deepin': ["lamp", "visual", "qt-play"],
