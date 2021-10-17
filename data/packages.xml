@@ -207,10 +207,32 @@
                 <pkgname>lightdm-gtk-greeter-settings</pkgname>
             </packages>
         </edition>
+
+        <edition name="Cutefish" description="Cutefish desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-cutefish</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
+        <edition name="Regolith" description="Regolith desktop">
+            <packages>
+                <pkgname>rebornos-cosmic-regolith</pkgname>
+                <pkgname>lightdm</pkgname>
+                <pkgname>lightdm-gtk-greeter</pkgname>
+                <pkgname>rebornos-lightdm-gtk-greeter-images</pkgname>
+                <pkgname>lightdm-gtk-greeter-settings</pkgname>
+            </packages>
+        </edition>
+
     </editions>
 
     <!-- User desired features -->
     <features>
+    
         <feature name="a11y">
             <pkgname>alsa-utils</pkgname>
             <pkgname>bluez</pkgname>
@@ -234,12 +256,14 @@
             <!-- <pkgname>python2-speechd</pkgname> -->
             <pkgname>vim</pkgname>
         </feature>
+        
         <feature name="aur">
             <pkgname>yay</pkgname>
             <pkgname>cmake</pkgname>
             <pkgname>git</pkgname>
             <pkgname>breezy</pkgname>
         </feature>
+        
         <feature name="bluetooth">
             <pkgname>bluez</pkgname>
             <pkgname>bluez-utils</pkgname>
@@ -248,9 +272,11 @@
             <pkgname desktops='kde,lxqt'>bluedevil</pkgname>
             <pkgname desktops='gnome'>gnome-bluetooth</pkgname>
         </feature>
+        
         <feature name="broadcom">
             <pkgname>broadcom-wl</pkgname>
         </feature>
+        
         <feature name="cups">
             <pkgname>rebornos-cosmic-cups</pkgname>
             <pkgname lib='qt'>print-manager</pkgname>
@@ -258,13 +284,16 @@
             <!-- <pkgname lib='gtk'>python2-gnomekeyring</pkgname> -->
             <!-- These two are required by hp-setup -->
         </feature>
+        
         <feature name="chromium">
             <pkgname>chromium</pkgname>
             <pkgname>chromium-widevine</pkgname>
         </feature>
+        
         <feature name="dropbox">
             <pkgname>dropbox</pkgname>
         </feature>
+        
         <feature name="firefox">
             <pkgname>firefox</pkgname>
               <pkgname lang="sq">firefox-i18n-sq</pkgname>
@@ -324,6 +353,7 @@
               <pkgname lang="vi">firefox-i18n-vi</pkgname>
               <pkgname lang="cy">firefox-i18n-cy</pkgname>
         </feature>
+        
         <feature name="firefox-developer-edition">
             <pkgname>firefox-developer-edition</pkgname>
               <pkgname lang="sq">firefox-developer-edition-i18n-sq</pkgname>
@@ -383,6 +413,7 @@
               <pkgname lang="vi">firefox-developer-edition-i18n-vi</pkgname>
               <pkgname lang="cy">firefox-developer-edition-i18n-cy</pkgname>            
         </feature>
+        
         <feature name="google-chrome">
         <pkgname>google-chrome</pkgname>
         </feature>
@@ -390,6 +421,7 @@
         <feature name="rtl8821ce-dkms-git">
         <pkgname>rtl8821ce-dkms-git</pkgname>
         </feature>
+        
         <feature name="megasync">
         <pkgname>megasync</pkgname>
         </feature>
@@ -410,28 +442,34 @@
                 <pkgname lang="nl">hunspell-nl</pkgname> <!-- Dutch hunspell dictionaries -->
                 <pkgname lang="pl">hunspell-pl</pkgname> <!-- Polish dictionary for Hunspell -->
         </feature>
+        
         <feature name="vivaldi">
             <pkgname>vivaldi</pkgname>
             <pkgname>vivaldi-ffmpeg-codecs</pkgname>
         </feature>
+        
         <feature name="opera">
             <pkgname>opera</pkgname>
         </feature>
+        
         <feature name="firewall">
             <pkgname>gufw</pkgname>
             <pkgname>ufw</pkgname>
         </feature>
+        
         <feature name="firewire">
             <pkgname>dvgrab</pkgname>
             <pkgname>libffado</pkgname>
             <pkgname>libraw1394</pkgname>
         </feature>
+        
         <feature name="games">
             <pkgname>steam-native-runtime</pkgname>
             <pkgname>steam</pkgname>
             <pkgname>playonlinux</pkgname>
             <pkgname arch="x86_64">lib32-libldap</pkgname>
         </feature>
+        
         <feature name="gtk-play">
             <pkgname>0ad</pkgname>
             <pkgname>megaglest</pkgname>
@@ -447,6 +485,7 @@
             <pkgname>gnome-sudoku</pkgname>
             <pkgname>gnome-mahjongg</pkgname>
         </feature>
+        
         <feature name="qt-play">
             <pkgname>0ad</pkgname>
             <pkgname>megaglest</pkgname>
@@ -462,6 +501,7 @@
             <pkgname>ksudoku</pkgname>
             <pkgname>kmahjongg</pkgname>
         </feature>
+        
         <feature name="graphics">
             <pkgname>gimp</pkgname>
             <pkgname>gthumb</pkgname>
@@ -470,15 +510,18 @@
             <pkgname>rawtherapee</pkgname>
             <pkgname>darktable</pkgname>
         </feature>
+        
         <feature name="hardinfo">
             <pkgname>hardinfo</pkgname>
         </feature>
+        
         <feature name="maintenance">
             <pkgname>bleachbit</pkgname>
             <pkgname>timeshift</pkgname>
             <pkgname>xapp</pkgname>
             <pkgname>stacer</pkgname>
         </feature>
+        
         <feature name="movie">
             <pkgname>openshot</pkgname>
             <pkgname>kdenlive</pkgname>
@@ -487,21 +530,26 @@
             <pkgname>pitivi</pkgname>
             <pkgname>avidemux-cli</pkgname>
         </feature>
+        
         <feature name="plymouth">
             <pkgname>plymouth</pkgname>
             <pkgname>arch-plymouthize</pkgname>
             <pkgname>plymouth-theme-arch-charge-big</pkgname>
         </feature>
+        
         <feature name="redshift">
             <pkgname>redshift</pkgname>
             <pkgname>redshiftgui-bin</pkgname>
         </feature>
+        
         <feature name="skype">
             <pkgname>skypeforlinux-stable-bin</pkgname>
         </feature>
+        
         <feature name="spotify">
             <pkgname>spotify</pkgname>
         </feature>
+        
         <feature name="email">
             <pkgname>thunderbird</pkgname>
               <pkgname lang="sq">thunderbird-i18n-sq</pkgname>
@@ -547,6 +595,7 @@
               <pkgname lang="vi">thunderbird-i18n-vi</pkgname>
               <pkgname lang="cy">thunderbird-i18n-cy</pkgname>
         </feature>
+        
         <feature name="lamp">
             <pkgname>apache</pkgname>
             <pkgname>php</pkgname>
@@ -555,6 +604,7 @@
             <pkgname>phpmyadmin</pkgname>
             <pkgname>php-mcrypt</pkgname>
         </feature>
+        
         <feature name="lemp">
             <pkgname>nginx</pkgname>
             <pkgname>php-fpm</pkgname>
@@ -562,13 +612,20 @@
             <pkgname>phpmyadmin</pkgname>
             <pkgname>php-mcrypt</pkgname>
         </feature>
+        
         <feature name="lts">
             <pkgname>linux-lts</pkgname>
             <pkgname>linux-lts-headers</pkgname>
         </feature>
+        
        <feature name="freeoffice">
               <pkgname>freeoffice</pkgname>
         </feature>
+        
+       <feature name="onlyoffice">
+              <pkgname>onlyoffice-bin</pkgname>
+        </feature>
+        
        <feature name="libreoffice">
               <pkgname>libreoffice-fresh</pkgname>
               <pkgname lang="sq">libreoffice-fresh-sq</pkgname>
@@ -629,6 +686,7 @@
               <pkgname lang="vi">libreoffice-fresh-vi</pkgname>
               <pkgname lang="cy">libreoffice-fresh-cy</pkgname>
         </feature>
+        
         <feature name="wps-office">
             <pkgname>wps-office</pkgname>
             <pkgname>wps-office-mime</pkgname>
@@ -641,43 +699,55 @@
             <!-- <pkgname lang="ru">wps-office-extension-russian-dictionary</pkgname> -->
             <!-- <pkgname lang="uk">wps-office-extension-english-uk-dictionary</pkgname> -->
        </feature>
+       
         <feature name="power">
             <pkgname>tlp</pkgname>
+            <pkgname>tlpui</pkgname>
             <pkgname>thermald</pkgname>
         </feature>
+        
         <feature name="sshd">
             <pkgname>openssh</pkgname>
         </feature>
+        
         <feature name="visual">
             <!-- Change compton for picom -->
             <pkgname>picom</pkgname>
             <!-- <pkgname>paranoid</pkgname> -->
         </feature>
+        
 	<feature name="nemo">
             <pkgname>nemo</pkgname>
             <!-- <pkgname>nemo-root</pkgname> -->
         </feature>
+        
 	<feature name="nautilus">
 	    <pkgname>nautilus</pkgname>
             <!-- <pkgname>nautilus-root</pkgname> -->
         </feature>
+        
         <feature name="qownnotes">
             <pkgname>qownnotes</pkgname>
 	</feature>
+	
         <feature name="vlc">
             <pkgname>vlc</pkgname>
             <pkgname>phonon-qt5-vlc</pkgname>
         </feature>
+        
         <feature name="wallpapers">
             <pkgname>variety</pkgname>
         </feature>
+        
         <feature name="wine">
             <pkgname>wine</pkgname>
             <pkgname>winetricks</pkgname>
             <pkgname>playonlinux</pkgname>
             <pkgname>lutris</pkgname>
         </feature>
+        
     </features>
+
 
     <net>
         <broadcom>

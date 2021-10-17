@@ -31,11 +31,12 @@
 
 # Disabled desktops(in DESKTOPS_DEV = DESKTOPS : "enlightenment", "windows", "apricity"
 # Enabled desktops (added ukui and lxde in 2021.06.15)
+# pantheon deleted
 
 DESKTOPS = ["base", "cinnamon", "deepin",
             "gnome", "kde", "mate", "openbox", "xfce"]
 
-DESKTOPS_DEV = DESKTOPS + ["budgie", "i3", "lxqt", "pantheon", "ukui", "lxde"]
+DESKTOPS_DEV = DESKTOPS + ["budgie", "i3", "lxqt", "ukui", "lxde", "cutefish", "regolith"]
 
 DESKTOPS_A11Y = ["gnome", "mate", "apricity"]
 
@@ -56,7 +57,6 @@ NAMES = {
     'base': "Base",
     'cinnamon': "Cinnamon",
     'deepin': "Deepin",
-    'pantheon': "Pantheon",
     'windows':"Windows Interface",
     'gnome': "GNOME",
     'kde': "KDE",
@@ -69,11 +69,13 @@ NAMES = {
     'lxqt': "LXQt",
     'ukui': "UKUI",
     'lxde': "LXDE",
+    'cutefish': "Cutefish",
+    'regolith': "Regolith",
 }
 
 LIBS = {
-    'gtk': ["apricity", "cinnamon", "deepin", "pantheon", "gnome", "mate", "openbox", "xfce", "budgie", "enlightenment", "i3", "windows", "lxde"],
-    'qt': ["kde", "lxqt", "ukui"]
+    'gtk': ["apricity", "cinnamon", "deepin", "gnome", "mate", "openbox", "xfce", "budgie", "enlightenment", "i3", "windows", "lxde", "regolith"],
+    'qt': ["kde", "lxqt", "ukui", "cutefish"]
 }
 
 ALL_FEATURES = ["a11y", "aur", "bluetooth", "broadcom", "maintenance", "cups", "chromium", "email", "dropbox", "firefox", "firefox-developer-edition", "google-chrome", "rtl8821ce-dkms-git", "megasync", "firewire", "opera", "hardinfo", "hunspell", "vivaldi", "games", "graphics", "gtk-play", "hardinfo", "qt-play", "movie", "graphic_drivers", "lamp", "lts", "freeoffice", "wps-office", "libreoffice", "redshift", "power", "sshd", "spotify", "visual", "vlc", "nautilus", "nemo", "qownnotes", "wallpapers", "wine"]
@@ -84,7 +86,6 @@ EXCLUDED_FEATURES = {
     'apricity': ["lamp", "visual", "nautilus", "qt-play"],
     'cinnamon': ["lamp", "visual", "nemo", "qt-play"],
     'deepin': ["lamp", "visual", "qt-play"],
-    'pantheon': ["lamp", "visual", "qt-play", "nemo"],
     'windows': ["lamp", "visual", "qt-play", "nemo"],
     'gnome': ["lamp", "visual", "nautilus", "qt-play"],
     'kde': ["lamp", "visual", "gtk-play"],
@@ -96,7 +97,9 @@ EXCLUDED_FEATURES = {
     'i3': ["lamp", "qt-play"],
     'lxqt': ["lamp", "visual", "gtk-play"],
     'ukui': ["lamp", "visual", "gtk-play"],
-    'lxde': ["lamp", "visual", "gtk-play"]
+    'lxde': ["lamp", "visual", "gtk-play"],
+    'cutefish': ["lamp", "visual", "gtk-play"],
+    'regolith': ["lamp", "visual", "gtk-play"]
 }
 
 # Session names for lightDM setup (/usr/share/xsessions)
@@ -104,7 +107,6 @@ SESSIONS = {
     'apricity' : 'gnome',
     'cinnamon': 'cinnamon',
     'deepin': 'deepin',
-    'pantheon': 'pantheon',
     'gnome': 'gnome',
     'kde': 'plasma',
     'mate': 'mate',
@@ -116,7 +118,9 @@ SESSIONS = {
     'lxqt': 'lxsession',
     'windows': 'windows',
     'ukui': 'ukui-session',
-    'lxde': 'startlxde'
+    'lxde': 'startlxde',
+    'cutefish': 'cutefish',
+    'regolith': 'regolith'
 }
 
 
@@ -129,23 +133,22 @@ DESCRIPTIONS = {
     'base': _("This option will install RebornOS as command-line only system, "
               "without any type of graphical interface. After the installation you can "
               "customize RebornOS by installing packages with the command-line package manager."),
+              
    'apricity': _("Apricity OS is a now discontinued Linux distro in the Arch Linux family that simply  "
                         "offered a highly customized GNOME dekstop experience that combined beauty with "
                         "funcionality. With this option, the original Apricity look and feel is finally revivied! Experience "
                          "it now on RebornOS."),
+                         
     'cinnamon': _("Cinnamon is a Linux desktop which provides advanced, "
                   "innovative features and a traditional desktop user experience. "
                   "Cinnamon aims to make users feel at home by providing them with "
                   "an easy-to-use and comfortable desktop experience."),
+                  
     'deepin': _("IMPORTANT: Keep in mind that the Deepin desktop can often be unstable. "
                 "This does not depend on us, but on the developers of Deepin who "
                 "usually upload BETA versions of the desktop or some components in the "
                 "stable repositories of Arch Linux."),
-    'pantheon': _("Pantheon is the desktop environment that Elementary OS runs on. "
-                  "While true Pantheon is too unstable for RebornOS to offer, we "
-                  "have tried to offer the next best thing. By selecting Pantheon, "
-                  "you will get Elementary OS's good looks on a highly customized desktop "
-                  "running Cinnamon underneath."), 
+                
     'gnome': _("GNOME 3 is an easy and elegant way to use your "
                "computer. It features the Activities Overview which "
                "is an easy way to access all your basic tasks."),
@@ -203,7 +206,19 @@ DESCRIPTIONS = {
     'lxde': _("LXDE, which stands for Lightweight X11 Desktop Environment, is a desktop "
               "environment which is lightweight and fast. It is designed to be user friendly "
               "and slim, while keeping the resource usage low. LXDE uses less RAM and less "
-              "CPU while being a feature rich desktop environment.")
+              "CPU while being a feature rich desktop environment."),
+    'cutefish': _("Cutefish tries to give the best experience on a desktop. To do this, "
+                  "KDE Frameworks, Qt, and KDE Plasma 5 are used. The desktop experience "
+                  "caters to beginners, rather than power users. As such, the devs have no "
+                  "(current) plans to add complex, edge-case, or convoluted settings and "
+                  "features. The aim is to provide a basic set of sane defaults that just "
+                  "work for most users."),
+                  
+    'regolith': _("It is a minimalist Desktop Environment with a functional user interface, "
+                  "which easily allows its modification and expansion, in many of its "
+                  "elements. And all thanks to its excellent balance of mixing the features "
+                  "of the administration of a GNOME System with the productive workflow of "
+                  "i3-wm.")
 }
 
 # Delete previous _() dummy declaration

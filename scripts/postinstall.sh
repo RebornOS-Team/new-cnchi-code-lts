@@ -599,9 +599,9 @@ fi
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         #cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
-        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for UKUI Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
-        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for UKUI Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         chroot ${CN_DESTDIR} systemctl enable earlyoom
         chroot ${CN_DESTDIR} systemctl enable ufw
         # Copy config files to use lightdm-gtk-greeter
@@ -621,9 +621,45 @@ fi
         chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
         #cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
         #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
-        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for LXDE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
-        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for MATE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for LXDE Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        chroot ${CN_DESTDIR} systemctl enable earlyoom
+        chroot ${CN_DESTDIR} systemctl enable ufw
+        # Copy config files to use lightdm-gtk-greeter
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
+        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
+        cp /usr/share/cnchi/lightdm-gtk-greeter.conf ${CN_DESTDIR}/etc/lightdm/
+        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf        
+    fi
+    
+    if [[ regolith = "${CN_DESKTOP}" ]]; then
+        chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
+        #cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Regolith Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
+        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Regolith Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        chroot ${CN_DESTDIR} systemctl enable earlyoom
+        chroot ${CN_DESTDIR} systemctl enable ufw
+        # Copy config files to use lightdm-gtk-greeter
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
+        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
+        cp /usr/share/cnchi/lightdm-gtk-greeter.conf ${CN_DESTDIR}/etc/lightdm/
+        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf        
+    fi    
+
+    if [[ cutefish = "${CN_DESKTOP}" ]]; then
+        chroot ${CN_DESTDIR} systemctl -fq enable lightdm.service
+        #cp /usr/share/cnchi/sddm.conf ${CN_DESTDIR}/etc/
+        #cp /usr/share/cnchi/updating.sh ${CN_DESTDIR}/usr/bin/
+        echo "# ---> Added by Cnchi RebornOS Installer Gnome based for Cutefish Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
+        echo "QT_QPA_PLATFORMTHEME=qt5ct" >> ${CN_DESTDIR}/etc/environment
+        echo "# ---> End added by Cnchi RebornOS Installer Gnome based for Cutefish Desktop <--- #" >> ${CN_DESTDIR}/etc/environment
         chroot ${CN_DESTDIR} systemctl enable earlyoom
         chroot ${CN_DESTDIR} systemctl enable ufw
         # Copy config files to use lightdm-gtk-greeter
