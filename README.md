@@ -1,4 +1,4 @@
-# new-cnchi-code
+# new-cnchi-code-lts
 New cnchi code used (LTS version)
 
 See the Wiki.
