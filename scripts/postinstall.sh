@@ -645,12 +645,15 @@ fi
         chroot ${CN_DESTDIR} systemctl enable earlyoom
         chroot ${CN_DESTDIR} systemctl enable ufw
         # Copy config files to use lightdm-gtk-greeter
-        rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
-        cp /usr/share/cnchi/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
-        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        # rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        # cp /usr/share/cnchi/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
+        # chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm.conf
         rm ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
         cp /usr/share/cnchi/lightdm-gtk-greeter.conf ${CN_DESTDIR}/etc/lightdm/
-        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf        
+        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm-gtk-greeter.conf
+        rm ${CN_DESTDIR}/etc/lightdm/lightdm.conf
+        cp /usr/share/cnchi/scripts/postinstall/regolith/etc/lightdm/lightdm.conf ${CN_DESTDIR}/etc/lightdm/
+        chmod 644 ${CN_DESTDIR}/etc/lightdm/lightdm.conf
     fi    
 
     if [[ cutefish = "${CN_DESKTOP}" ]]; then
