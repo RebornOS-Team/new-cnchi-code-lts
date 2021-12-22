@@ -245,7 +245,7 @@
             <pkgname>dhclient</pkgname>
             <pkgname>dnsmasq</pkgname>
             <pkgname>elinks</pkgname>
-            <pkgname>espeak</pkgname>
+            <pkgname>espeak-ng</pkgname>
             <pkgname>espeakup</pkgname>
             <pkgname>ethtool</pkgname>
             <pkgname>gnu-netcat</pkgname>
